@@ -1,0 +1,65 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  overflow: hidden;
+  color: white;
+  background: #242424;
+  font: 16px Arial, sans-serif;
+}
+
+canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+[hidden] { display: none !important; }
+
+#menu {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #141414d9;
+  padding: 16px;
+}
+
+#menu > div { max-width: 400px; }
+h1 { font-size: 24px; }
+button { padding: 6px 16px; font: inherit; cursor: pointer; }
+.controles { color: #ddd; font-size: 14px; line-height: 1.5; }
+
+#hud, #aviso, #mira { position: fixed; pointer-events: none; }
+
+#hud, #aviso {
+  padding: 6px 9px;
+  background: #161616dd;
+}
+
+#hud { right: 14px; bottom: 14px; }
+
+#aviso {
+  left: 50%;
+  bottom: 15%;
+  transform: translateX(-50%);
+}
+
+#mira {
+  left: 50%;
+  top: 50%;
+  width: 13px;
+  height: 13px;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+#mira::before, #mira::after {
+  content: '';
+  position: absolute;
+  background: currentColor;
+}
+
+#mira::before { inset: 6px 0; }
+#mira::after { inset: 0 6px; }
+#mira.impacto { color: #ffc342; }
